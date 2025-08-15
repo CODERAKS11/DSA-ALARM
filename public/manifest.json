@@ -1,0 +1,22 @@
+{
+  "name": "DSA Wake-Up",
+  "short_name": "DSA Wake-Up",
+  "description": "An app to enforce your DSA study habits.",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#121217",
+  "background_color": "#121217",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
