@@ -20,12 +20,28 @@ export function playSound(sound: AlarmSound) {
         currentAudio.pause();
         currentAudio.currentTime = 0;
     }
+    
+    const soundFile = soundFiles[sound];
+    if (!soundFile) {
+        // Silently exit if there's no sound file defined to avoid errors.
+        return;
+    }
 
-    const audio = new Audio(soundFiles[sound]);
-    audio.play().catch(error => {
-        console.error("Failed to play audio:", error);
+    const audio = new Audio(soundFile);
+    
+    // Add an error listener to catch loading problems
+    audio.addEventListener('error', () => {
+        console.warn(`Could not load sound file: ${soundFile}. Please ensure the file exists in the public/sounds directory.`);
+        return;
     });
-    currentAudio = audio;
+
+    // Only play if the source is valid
+    audio.addEventListener('canplaythrough', () => {
+        audio.play().catch(error => {
+            console.error("Failed to play audio:", error);
+        });
+        currentAudio = audio;
+    });
 }
 
 export function stopSound() {

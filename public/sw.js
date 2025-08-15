@@ -1,1 +1,41 @@
-if(!self.define){let e,s={};const n=(n,a)=>(n=new URL(n+".js",a).href,s[n]||new Promise(s=>{if("document"in self){const e=document.createElement("script");e.src=n,e.onload=s,document.head.appendChild(e)}else e=n,importScripts(n),s()}).then(()=>{let e=s[n];if(!e)throw new Error(`Module ${n} didn’t register its module`);return e}));self.define=(a,t)=>{const i=e||("document"in self?document.currentScript.src:"")||location.href;if(s[i])return;let c={};const r=e=>n(e,i),o={module:{uri:i},exports:c,require:r};s[i]=Promise.all(a.map(e=>o[e]||r(e))).then(e=>(t(...e),c))}}define(["./workbox-4754cb34"],function(e){"use strict";importScripts(),self.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/_next/app-build-manifest.json",revision:"bc6ed8c6ee364c43c5dfdb3f684b5604"},{url:"/_next/static/1AbW_k0UPs_WNAT7Xpk8b/_buildManifest.js",revision:"7dcf5e04a58948f7a14b905c447e00aa"},{url:"/_next/static/1AbW_k0UPs_WNAT7Xpk8b/_ssgManifest.js",revision:"b6652df95db52feb4daf4eca35380933"},{url:"/_next/static/chunks/181-ec33951aaa48adb3.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/336-5e1fa06a66b87cb0.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/341.056900400c7cb71c.js",revision:"056900400c7cb71c"},{url:"/_next/static/chunks/352-ff091c4d58e29ad1.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/472.a3826d29d6854395.js",revision:"a3826d29d6854395"},{url:"/_next/static/chunks/4bd1b696-0005e58f1d30f2d4.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/673-993bd70ac0bac87a.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/675-9ed327f8b6e117ea.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/684-4719ac847f822172.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/726-10a18d4637a3ca52.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/96-63a10d2dbeb7af24.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/999-b4af6af49e11134c.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/app/_not-found/page-392d3926d87fb08b.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/app/alarm/active/page-18fc748136cfb9e7.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/app/layout-f7dfa6667ae90c91.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/app/page-01ce1fe7e52d3f91.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/app/question/%5Bid%5D/page-f5b7eaeaecad0092.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/framework-6d868e9bc95e10d8.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/main-app-5fe5d0bea1792f8c.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/main-fc67bac391a4a599.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/pages/_app-f49b2a5977e4bd4f.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/pages/_error-c67e5ae945ee3c40.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/chunks/polyfills-42372ed130431b0a.js",revision:"846118c33b2c0e922d7b3a7676f81f6f"},{url:"/_next/static/chunks/webpack-7b8eb4de030eaea8.js",revision:"1AbW_k0UPs_WNAT7Xpk8b"},{url:"/_next/static/css/a5b4e95890a326cf.css",revision:"a5b4e95890a326cf"},{url:"/icons/icon-192x192.png",revision:"d19795f0061d4a825b3a351eade60e5d"},{url:"/icons/icon-512x512.png",revision:"501ac6afbb165398e2f0f4028a3de29a"},{url:"/manifest.json",revision:"4905f7aadb0d8af1743face3993c32c4"},{url:"/manifest.webmanifest",revision:"46009346a1bdb58b6e9987f679b65350"}],{ignoreURLParametersMatching:[]}),e.cleanupOutdatedCaches(),e.registerRoute("/",new e.NetworkFirst({cacheName:"start-url",plugins:[{cacheWillUpdate:async({request:e,response:s,event:n,state:a})=>s&&"opaqueredirect"===s.type?new Response(s.body,{status:200,statusText:"OK",headers:s.headers}):s}]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts-webfonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3})]}),"GET"),e.registerRoute(/^https:\/\/fonts\.(?:googleapis)\.com\/.*/i,new e.StaleWhileRevalidate({cacheName:"google-fonts-stylesheets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800})]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/image\?url=.+$/i,new e.StaleWhileRevalidate({cacheName:"next-image",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp3|wav|ogg)$/i,new e.CacheFirst({cacheName:"static-audio-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:mp4)$/i,new e.CacheFirst({cacheName:"static-video-assets",plugins:[new e.RangeRequestsPlugin,new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:css|less)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\/_next\/data\/.+\/.+\.json$/i,new e.StaleWhileRevalidate({cacheName:"next-data",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.NetworkFirst({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(({url:e})=>{if(!(self.origin===e.origin))return!1;const s=e.pathname;return!s.startsWith("/api/auth/")&&!!s.startsWith("/api/")},new e.NetworkFirst({cacheName:"apis",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(({url:e})=>{if(!(self.origin===e.origin))return!1;return!e.pathname.startsWith("/api/")},new e.NetworkFirst({cacheName:"others",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:86400})]}),"GET"),e.registerRoute(({url:e})=>!(self.origin===e.origin),new e.NetworkFirst({cacheName:"cross-origin",networkTimeoutSeconds:10,plugins:[new e.ExpirationPlugin({maxEntries:32,maxAgeSeconds:3600})]}),"GET")});
+
+const CACHE_NAME = 'dsa-alarm-cache-v1';
+const urlsToCache = [
+  '/',
+  '/manifest.webmanifest',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/sounds/classic.mp3',
+  '/sounds/digital.mp3',
+  '/sounds/gentle.mp3',
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => {
+        console.log('Opened cache');
+        return cache.addAll(urlsToCache);
+      })
+  );
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request)
+      .then(response => {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }
+    )
+  );
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'show-notification') {
+    const { title, options } = event.data.payload;
+    event.waitUntil(self.registration.showNotification(title, options));
+  }
+});

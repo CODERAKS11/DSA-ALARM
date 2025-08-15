@@ -9,6 +9,8 @@ interface PageProps {
     }
 }
 
+export const dynamic = 'force-dynamic'
+
 export default function QuestionPage({ params }: PageProps) {
     const question = getQuestionById(params.id);
 

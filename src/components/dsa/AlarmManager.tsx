@@ -12,21 +12,22 @@ const activatedAlarms = new Set<string>();
 const LAST_AUTO_ALARM_CHECK_KEY = 'last-auto-alarm-check';
 
 const showNotification = (title: string, options: NotificationOptions) => {
-  if (typeof window !== 'undefined' && 'Notification' in window && Notification.permission === 'granted') {
-    if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-       navigator.serviceWorker.controller.postMessage({
-         type: 'show-notification',
-         payload: { title, options },
-       });
-    } else {
-      new Notification(title, options);
-    }
+  if (
+    typeof window !== 'undefined' &&
+    'Notification' in window &&
+    Notification.permission === 'granted' &&
+    'serviceWorker' in navigator &&
+    navigator.serviceWorker.ready
+  ) {
+    navigator.serviceWorker.ready.then(registration => {
+      registration.showNotification(title, options);
+    });
   }
 };
 
 
 export function AlarmManager() {
-  const { alarms, activateAlarm, addOrUpdateAlarm, getAlarmById, snoozeAlarm } = useAlarmStore();
+  const { alarms, activateAlarm, addOrUpdateAlarm } = useAlarmStore();
   const { progress } = useDsaProgress();
   const router = useRouter();
 
@@ -39,6 +40,18 @@ export function AlarmManager() {
         }
     };
     requestNotificationPermission();
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').then(
+        (registration) => {
+          console.log('Service Worker registration successful with scope: ', registration.scope);
+        },
+        (err) => {
+          console.log('Service Worker registration failed: ', err);
+        }
+      );
+    }
+
   }, []);
 
   useEffect(() => {
